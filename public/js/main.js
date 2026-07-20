@@ -192,7 +192,9 @@
         });
       }
 
-      const endpoint = form.dataset.form === 'demo' ? '/api/demo' : '/api/contact';
+      let endpoint = '/api/contact';
+      if (form.dataset.form === 'demo') endpoint = '/api/demo';
+      if (form.dataset.form === 'forwarder') endpoint = '/api/forwarder';
 
       try {
         const response = await fetch(endpoint, {
@@ -239,6 +241,48 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: input ? input.value : '' })
+        });
+
+        /* ── Multi-step Forwarder Form ───────────────────────────── */
+        document.querySelectorAll('[data-multistep-form]').forEach(form => {
+          const steps = Array.from(form.querySelectorAll('[data-form-step]'));
+          if (steps.length < 2) return;
+
+          let currentStep = 0;
+          const nextBtn = form.querySelector('[data-step-next]');
+          const prevBtn = form.querySelector('[data-step-prev]');
+          const progress = form.querySelector('[data-step-progress]');
+
+          const renderStep = () => {
+            steps.forEach((step, index) => {
+              step.style.display = index === currentStep ? 'block' : 'none';
+            });
+
+            if (prevBtn) prevBtn.style.display = currentStep === 0 ? 'none' : 'inline-flex';
+            if (nextBtn) nextBtn.style.display = currentStep === steps.length - 1 ? 'none' : 'inline-flex';
+            if (progress) progress.textContent = `Step ${currentStep + 1} of ${steps.length}`;
+          };
+
+          if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+              const activeStep = steps[currentStep];
+              const requiredInputs = activeStep.querySelectorAll('input[required], select[required], textarea[required]');
+              const isValid = Array.from(requiredInputs).every(input => input.reportValidity());
+              if (!isValid) return;
+
+              currentStep = Math.min(currentStep + 1, steps.length - 1);
+              renderStep();
+            });
+          }
+
+          if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+              currentStep = Math.max(currentStep - 1, 0);
+              renderStep();
+            });
+          }
+
+          renderStep();
         });
 
         if (response.ok) {

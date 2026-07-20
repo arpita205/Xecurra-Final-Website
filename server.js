@@ -87,7 +87,11 @@ app.post('/api/contact', async (req, res) => {
     <p><strong>Company:</strong> ${req.body.company || 'N/A'}</p>
     <p><strong>Email:</strong> ${req.body.email || 'N/A'}</p>
     <p><strong>Phone:</strong> ${req.body.phone || 'N/A'}</p>
-    <p><strong>Requirement:</strong> ${req.body.requirement || 'N/A'}</p>
+    <p><strong>Requirement:</strong> ${req.body.requirement || req.body.service_interest || 'N/A'}</p>
+    <p><strong>Business Type:</strong> ${req.body.business_type || 'N/A'}</p>
+    <p><strong>Primary Lanes:</strong> ${req.body.primary_lanes || 'N/A'}</p>
+    <p><strong>Monthly Shipments:</strong> ${req.body.monthly_shipments || 'N/A'}</p>
+    <p><strong>Certifications:</strong> ${req.body.certifications || 'N/A'}</p>
     <p><strong>Message:</strong> ${req.body.message || 'N/A'}</p>
   `;
   
@@ -130,6 +134,30 @@ app.post('/api/newsletter', async (req, res) => {
 
   await sendNotificationEmail('New Newsletter Subscriber', html);
   res.status(200).json({ success: true, message: 'Subscribed successfully!' });
+});
+
+// 4. Forwarder Onboarding Endpoint
+app.post('/api/forwarder', async (req, res) => {
+  console.log('--- New Forwarder Onboarding Request ---', req.body);
+
+  const html = `
+    <h2>New Forwarder Onboarding Request</h2>
+    <p><strong>Company Name:</strong> ${req.body.company_name || 'N/A'}</p>
+    <p><strong>Contact Person:</strong> ${req.body.contact_person || 'N/A'}</p>
+    <p><strong>Email:</strong> ${req.body.email || 'N/A'}</p>
+    <p><strong>Phone:</strong> ${req.body.phone || 'N/A'}</p>
+    <p><strong>Business Type:</strong> ${req.body.business_type || 'N/A'}</p>
+    <p><strong>GSTIN:</strong> ${req.body.gstin || 'N/A'}</p>
+    <p><strong>IEC/FIATA/CHA:</strong> ${req.body.certifications || 'N/A'}</p>
+    <p><strong>Primary Service Lanes:</strong> ${req.body.primary_lanes || 'N/A'}</p>
+    <p><strong>Monthly Shipments Capacity:</strong> ${req.body.monthly_shipments || 'N/A'}</p>
+    <p><strong>Average RFQ Response Time:</strong> ${req.body.rfq_response_time || 'N/A'}</p>
+    <p><strong>Current Systems:</strong> ${req.body.current_systems || 'N/A'}</p>
+    <p><strong>Message:</strong> ${req.body.message || 'N/A'}</p>
+  `;
+
+  await sendNotificationEmail('New Forwarder Onboarding Request', html);
+  res.status(200).json({ success: true, message: 'Forwarder onboarding request received!' });
 });
 
 // Fallback for 404s

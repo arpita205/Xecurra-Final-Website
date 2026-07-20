@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform — XecurraTrade, Logix, Fin, Connect, AI | Xecurra</title>
+  <meta name="description" content="Explore Xecurra's five platform modules: XecurraTrade for documentation, XecurraLogix for logistics, XecurraFin for trade finance, XecurraConnect for partner networks, and XecurraAI for intelligent automation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages/subpages.css" />
+</head>
+<body>
+
+<!-- NAV (same on all pages) -->
+<nav class="navbar navbar--transparent" role="navigation" aria-label="Main navigation">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" aria-label="Xecurra Home">
+      <div class="navbar__logo-mark">X</div>
+      <div class="navbar__logo-text">
+        <span class="navbar__logo-name">XECURRA</span>
+        <span class="navbar__logo-tagline">Trade-Tech Platform</span>
+      </div>
+    </a>
+    <ul class="navbar__nav" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item">
+        <a href="platform.html" class="nav-link active">Platform <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="nav-dropdown">
+          <a href="#trade"><span class="dd-icon">📄</span> XecurraTrade</a>
+          <a href="#logix"><span class="dd-icon">🚢</span> XecurraLogix</a>
+          <a href="#fin"><span class="dd-icon">💳</span> XecurraFin</a>
+          <a href="#connect"><span class="dd-icon">🔗</span> XecurraConnect</a>
+          <a href="#ai"><span class="dd-icon">🤖</span> XecurraAI</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="solutions.html" class="nav-link">Solutions</a></li>
+      <li class="nav-item"><a href="industries.html" class="nav-link">Industries</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+      <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar__actions">
+      <button class="btn btn--accent" data-demo-trigger>Get a Free Demo</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-item"><a href="index.html">Home</a></div>
+  <div class="mobile-nav-item"><a href="platform.html">Platform</a></div>
+  <div class="mobile-nav-item"><a href="solutions.html">Solutions</a></div>
+  <div class="mobile-nav-item"><a href="industries.html">Industries</a></div>
+  <div class="mobile-nav-item"><a href="about.html">About Us</a></div>
+  <div class="mobile-nav-item"><a href="resources.html">Resources</a></div>
+  <div class="mobile-nav-item"><a href="contact.html">Contact</a></div>
+  <div class="mobile-nav-actions">
+    <button class="btn btn--accent btn--lg" data-demo-trigger style="width:100%">Get a Free Demo</button>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="bg-dots--light" aria-hidden="true"></div>
+  <div class="container page-hero__inner">
+    <span class="section-label section-label--dark" data-aos="fade-up">Our Platform</span>
+    <h1 class="page-hero__title" data-aos="fade-up" data-aos-delay="80">Five Modules.<br><span style="background:linear-gradient(135deg,#00B4CC,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">One Unified Ecosystem.</span></h1>
+    <p class="page-hero__desc" data-aos="fade-up" data-aos-delay="160">Every capability an MSME exporter or importer needs — connected by AI, built for India's trade realities.</p>
+    <div data-aos="fade-up" data-aos-delay="240">
+      <button class="btn btn--accent btn--lg" data-demo-trigger>Request a Demo</button>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE TAB NAV -->
+<section style="background:var(--clr-dark-bg);padding-block:var(--sp-20)" id="platform-tabs">
+  <div class="container">
+    <div class="tab-nav" data-tab-group="platform" role="tablist">
+      <button class="tab-btn active" data-tab-btn role="tab" aria-selected="true">📄 XecurraTrade</button>
+      <button class="tab-btn" data-tab-btn role="tab" aria-selected="false">🚢 XecurraLogix</button>
+      <button class="tab-btn" data-tab-btn role="tab" aria-selected="false">💳 XecurraFin</button>
+      <button class="tab-btn" data-tab-btn role="tab" aria-selected="false">🔗 XecurraConnect</button>
+      <button class="tab-btn" data-tab-btn role="tab" aria-selected="false">🤖 XecurraAI</button>
+    </div>
+
+    <!-- XecurraTrade -->
+    <div data-tab-panel="platform" class="tab-panel active" id="trade">
+      <div class="platform-tab-content">
+        <div>
+          <span class="ptc-label">📄 Module 01</span>
+          <h2 class="ptc-title">XecurraTrade — Smart Trade Documentation</h2>
+          <p class="ptc-desc">Stop losing days to manual paperwork. XecurraTrade uses AI to generate, validate, and manage every trade document your MSME needs — accurately, every time.</p>
+          <div class="ptc-features">
+            <div class="ptc-feature"><div class="ptc-feature__icon">📃</div><div class="ptc-feature__text"><h4>AI Document Generation</h4><p>Auto-generate commercial invoices, packing lists, BOL, certificates of origin, and more in minutes.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">✅</div><div class="ptc-feature__text"><h4>Compliance Checker</h4><p>Real-time HS code validation, DGFT compliance checks, and customs tariff alerts before shipment.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">🔒</div><div class="ptc-feature__text"><h4>Digital Document Vault</h4><p>Securely store and share all trade documents with your forwarder, bank, or buyer — with version control.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">🌐</div><div class="ptc-feature__text"><h4>Multi-Country Templates</h4><p>Pre-built templates for 50+ destination countries with country-specific compliance built in.</p></div></div>
+          </div>
+          <div class="ptc-who">
+            <span class="ptc-who__tag">✓ Exporters</span>
+            <span class="ptc-who__tag">✓ Importers</span>
+            <span class="ptc-who__tag">✓ Trading Companies</span>
+          </div>
+          <button class="btn btn--accent" data-demo-trigger>Request Demo for XecurraTrade</button>
+        </div>
+        <div class="ptc-visual">
+          <div class="ptc-module-icon">📄</div>
+          <div class="ptc-visual-title">XecurraTrade Dashboard</div>
+          <div class="ptc-visual-sub">Documentation &amp; Compliance Hub</div>
+          <div class="ptc-mini-stats">
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">50+</div><div class="ptc-mini-stat__key">Doc Types</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">98%</div><div class="ptc-mini-stat__key">Accuracy Rate</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">4 hrs</div><div class="ptc-mini-stat__key">Avg. Doc Time</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">50+</div><div class="ptc-mini-stat__key">Countries</div></div>
+          </div>
+          <div class="integration-map">
+            <div class="integration-map__title">Integrates with</div>
+            <div class="integration-pills">
+              <span class="integration-pill">XecurraLogix</span>
+              <span class="integration-pill">XecurraFin</span>
+              <span class="integration-pill">DGFT Portal</span>
+              <span class="integration-pill">Zoho CRM</span>
+              <span class="integration-pill">ICEGATE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- XecurraLogix -->
+    <div data-tab-panel="platform" class="tab-panel" id="logix">
+      <div class="platform-tab-content">
+        <div>
+          <span class="ptc-label">🚢 Module 02</span>
+          <h2 class="ptc-title">XecurraLogix — End-to-End Logistics Control</h2>
+          <p class="ptc-desc">Book freight, track shipments in real-time, manage customs clearance, and coordinate warehousing — all from a single intelligent dashboard.</p>
+          <div class="ptc-features">
+            <div class="ptc-feature"><div class="ptc-feature__icon">📦</div><div class="ptc-feature__text"><h4>Multi-Modal Booking</h4><p>Book sea freight (FCL/LCL), air cargo, and road transport through our verified forwarder network.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">📡</div><div class="ptc-feature__text"><h4>Real-Time Tracking</h4><p>Live shipment visibility across all carriers. Container tracking, ETA alerts, and milestone notifications.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">🏛️</div><div class="ptc-feature__text"><h4>Customs Clearance</h4><p>Digital coordination with customs agents. Pre-arrival filing, duty calculation, and clearance status tracking.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">🏗️</div><div class="ptc-feature__text"><h4>Warehousing &amp; Stuffing</h4><p>Connect with bonded warehouses and CFS across India's key port clusters.</p></div></div>
+          </div>
+          <div class="ptc-who">
+            <span class="ptc-who__tag">✓ Exporters</span>
+            <span class="ptc-who__tag">✓ Importers</span>
+            <span class="ptc-who__tag">✓ Project Cargo</span>
+          </div>
+          <button class="btn btn--accent" data-demo-trigger>Request Demo for XecurraLogix</button>
+        </div>
+        <div class="ptc-visual">
+          <div class="ptc-module-icon">🚢</div>
+          <div class="ptc-visual-title">XecurraLogix Dashboard</div>
+          <div class="ptc-visual-sub">Shipment &amp; Freight Management</div>
+          <div class="ptc-mini-stats">
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">28+</div><div class="ptc-mini-stat__key">Trade Lanes</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">3</div><div class="ptc-mini-stat__key">Modes</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">24/7</div><div class="ptc-mini-stat__key">Tracking</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">48hr</div><div class="ptc-mini-stat__key">Quote Time</div></div>
+          </div>
+          <div class="integration-map">
+            <div class="integration-map__title">Integrates with</div>
+            <div class="integration-pills">
+              <span class="integration-pill">XecurraTrade</span>
+              <span class="integration-pill">XecurraConnect</span>
+              <span class="integration-pill">COSCO</span>
+              <span class="integration-pill">TS Lines</span>
+              <span class="integration-pill">ICD Networks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- XecurraFin -->
+    <div data-tab-panel="platform" class="tab-panel" id="fin">
+      <div class="platform-tab-content">
+        <div>
+          <span class="ptc-label">💳 Module 03</span>
+          <h2 class="ptc-title">XecurraFin — Trade Finance, Simplified</h2>
+          <p class="ptc-desc">Access working capital, manage Letters of Credit, and collect international payments digitally. No bank branch visits. No weeks of waiting.</p>
+          <div class="ptc-features">
+            <div class="ptc-feature"><div class="ptc-feature__icon">💰</div><div class="ptc-feature__text"><h4>Invoice Financing</h4><p>Get up to 90% of your export invoice value upfront. Same-day assessment, 72-hour disbursal.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">📜</div><div class="ptc-feature__text"><h4>LC Management</h4><p>Digital LC drafting, discounting, and tracking. Coordinate with your bank and buyer in one platform.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">🌍</div><div class="ptc-feature__text"><h4>Buyer Credit &amp; MSME Loans</h4><p>Pre-shipment and post-shipment credit lines. ECGC-backed credit protection for new markets.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">💱</div><div class="ptc-feature__text"><h4>Forex &amp; Payment Collection</h4><p>Competitive forex rates, SWIFT collection, and USD/EUR payment receipts managed digitally.</p></div></div>
+          </div>
+          <div class="ptc-who">
+            <span class="ptc-who__tag">✓ Exporters</span>
+            <span class="ptc-who__tag">✓ Importers</span>
+            <span class="ptc-who__tag">✓ Finance Seekers</span>
+          </div>
+          <button class="btn btn--accent" data-demo-trigger>Request Demo for XecurraFin</button>
+        </div>
+        <div class="ptc-visual">
+          <div class="ptc-module-icon">💳</div>
+          <div class="ptc-visual-title">XecurraFin Dashboard</div>
+          <div class="ptc-visual-sub">Trade Finance &amp; Payments</div>
+          <div class="ptc-mini-stats">
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">72hr</div><div class="ptc-mini-stat__key">Disbursal</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">90%</div><div class="ptc-mini-stat__key">Invoice Cover</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">₹50L+</div><div class="ptc-mini-stat__key">Max Credit</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">15+</div><div class="ptc-mini-stat__key">Finance Partners</div></div>
+          </div>
+          <div class="integration-map">
+            <div class="integration-map__title">Integrates with</div>
+            <div class="integration-pills">
+              <span class="integration-pill">XecurraTrade</span>
+              <span class="integration-pill">ECGC</span>
+              <span class="integration-pill">SIDBI</span>
+              <span class="integration-pill">EXIM Bank</span>
+              <span class="integration-pill">RBI Compliant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- XecurraConnect -->
+    <div data-tab-panel="platform" class="tab-panel" id="connect">
+      <div class="platform-tab-content">
+        <div>
+          <span class="ptc-label">🔗 Module 04</span>
+          <h2 class="ptc-title">XecurraConnect — India's Trade Partner Network</h2>
+          <p class="ptc-desc">Instantly connect with verified freight forwarders, shipping lines, CHA agents, and logistics service providers. Get multiple quotes, compare, and book — all in one place.</p>
+          <div class="ptc-features">
+            <div class="ptc-feature"><div class="ptc-feature__icon">🏢</div><div class="ptc-feature__text"><h4>Verified Forwarder Network</h4><p>Access India's curated directory of FIATA-certified and background-verified freight forwarders.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">⚡</div><div class="ptc-feature__text"><h4>Instant RFQ Engine</h4><p>Submit your cargo details once, get competitive quotes from multiple forwarders within hours.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">⭐</div><div class="ptc-feature__text"><h4>Ratings &amp; Reviews</h4><p>Make informed decisions with transparent forwarder ratings, on-time performance, and client reviews.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">🤝</div><div class="ptc-feature__text"><h4>Partner Onboarding</h4><p>Freight forwarders can join XecurraConnect as verified partners and access MSME business digitally.</p></div></div>
+          </div>
+          <div class="ptc-who">
+            <span class="ptc-who__tag">✓ Exporters</span>
+            <span class="ptc-who__tag">✓ Importers</span>
+            <span class="ptc-who__tag">✓ Freight Forwarders</span>
+          </div>
+          <button class="btn btn--accent" data-demo-trigger>Join XecurraConnect</button>
+        </div>
+        <div class="ptc-visual">
+          <div class="ptc-module-icon">🔗</div>
+          <div class="ptc-visual-title">XecurraConnect Network</div>
+          <div class="ptc-visual-sub">Partner &amp; Forwarder Marketplace</div>
+          <div class="ptc-mini-stats">
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">50+</div><div class="ptc-mini-stat__key">Forwarders</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">3hr</div><div class="ptc-mini-stat__key">Avg Quote</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">18%</div><div class="ptc-mini-stat__key">Avg Savings</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">12+</div><div class="ptc-mini-stat__key">Port Hubs</div></div>
+          </div>
+          <div class="integration-map">
+            <div class="integration-map__title">Key Partners</div>
+            <div class="integration-pills">
+              <span class="integration-pill">COSCO</span>
+              <span class="integration-pill">TS Lines</span>
+              <span class="integration-pill">NFPL</span>
+              <span class="integration-pill">MPRS Freight</span>
+              <span class="integration-pill">ICD Tughlakabad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- XecurraAI -->
+    <div data-tab-panel="platform" class="tab-panel" id="ai">
+      <div class="platform-tab-content">
+        <div>
+          <span class="ptc-label">🤖 Module 05</span>
+          <h2 class="ptc-title">XecurraAI — Your Intelligent Trade Assistant</h2>
+          <p class="ptc-desc">AI that understands trade. Get predictive insights, automated compliance checks, intelligent document processing, and a virtual trade advisor — available 24/7.</p>
+          <div class="ptc-features">
+            <div class="ptc-feature"><div class="ptc-feature__icon">🧠</div><div class="ptc-feature__text"><h4>AI Trade Assistant</h4><p>Ask XecurraAI anything — HS code lookup, Incoterms guidance, duty calculation, or market intelligence.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">📊</div><div class="ptc-feature__text"><h4>Predictive Analytics</h4><p>Market trend forecasting, freight rate predictions, and demand signals for your target export markets.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">⚠️</div><div class="ptc-feature__text"><h4>Compliance Alerts</h4><p>Real-time alerts on trade policy changes, DGFT notifications, customs duty revisions, and sanction lists.</p></div></div>
+            <div class="ptc-feature"><div class="ptc-feature__icon">⚙️</div><div class="ptc-feature__text"><h4>Workflow Automation</h4><p>Auto-trigger document generation, forwarder notifications, and bank alerts at key shipment milestones.</p></div></div>
+          </div>
+          <div class="ptc-who">
+            <span class="ptc-who__tag">✓ All Users</span>
+            <span class="ptc-who__tag">✓ New Exporters</span>
+            <span class="ptc-who__tag">✓ Trade Analysts</span>
+          </div>
+          <button class="btn btn--accent" data-demo-trigger>See XecurraAI in Action</button>
+        </div>
+        <div class="ptc-visual">
+          <div class="ptc-module-icon">🤖</div>
+          <div class="ptc-visual-title">XecurraAI Engine</div>
+          <div class="ptc-visual-sub">Intelligent Automation Layer</div>
+          <div class="ptc-mini-stats">
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">24/7</div><div class="ptc-mini-stat__key">Available</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">5000+</div><div class="ptc-mini-stat__key">HS Codes</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">95%</div><div class="ptc-mini-stat__key">Doc Accuracy</div></div>
+            <div class="ptc-mini-stat"><div class="ptc-mini-stat__val">Real-time</div><div class="ptc-mini-stat__key">Compliance</div></div>
+          </div>
+          <div class="integration-map">
+            <div class="integration-map__title">Powered by</div>
+            <div class="integration-pills">
+              <span class="integration-pill">All Modules</span>
+              <span class="integration-pill">DGFT Data</span>
+              <span class="integration-pill">Customs API</span>
+              <span class="integration-pill">RBI Rates</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--clr-dark-surface);padding-block:var(--sp-20)">
+  <div class="container">
+    <div class="cta-banner" data-aos="zoom-in">
+      <div class="cta-banner__inner">
+        <h2 class="cta-banner__title">Ready to See the Full Platform?</h2>
+        <p class="cta-banner__desc">Book a 30-minute demo with our trade specialist and explore all five modules live.</p>
+        <div class="cta-banner__actions">
+          <button class="btn btn--accent btn--lg" data-demo-trigger>Book Free Demo</button>
+          <a href="contact.html" class="btn btn--outline btn--lg">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand-name">XECURRA</div>
+        <div class="footer__brand-tag">Infinity LLP</div>
+        <p class="footer__brand-desc">India's Trade-Tech Platform for MSMEs. Digitizing end-to-end export-import workflows.</p>
+        <div class="footer__social">
+          <a href="https://linkedin.com/company/xecurra" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://instagram.com/xecurra" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+          <a href="https://twitter.com/xecurra" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Platform</div>
+        <ul class="footer__links">
+          <li><a href="#trade">XecurraTrade</a></li>
+          <li><a href="#logix">XecurraLogix</a></li>
+          <li><a href="#fin">XecurraFin</a></li>
+          <li><a href="#connect">XecurraConnect</a></li>
+          <li><a href="#ai">XecurraAI</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Company</div>
+        <ul class="footer__links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__contact-item"><span>📍</span><span>Faridabad, Haryana, India</span></div>
+        <div class="footer__contact-item"><span>✉️</span><span><a href="mailto:hello@xecurra.com">hello@xecurra.com</a></span></div>
+        <div class="footer__newsletter">
+          <p>Stay updated on trade insights</p>
+          <form class="newsletter-form" data-form="newsletter">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__bottom-text">© 2026 Xecurra Infinity LLP. All rights reserved. 🇮🇳</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp -->
+<div class="whatsapp-float">
+  <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="whatsapp-float__btn" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+</div>
+
+<!-- Demo Modal (reuse from index) -->
+<div id="demo-modal" style="display:none;position:fixed;inset:0;z-index:var(--z-modal);align-items:center;justify-content:center;padding:var(--sp-4)">
+  <div id="demo-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);"></div>
+  <div style="position:relative;background:var(--clr-dark-card);border:1px solid rgba(0,123,138,0.4);border-radius:var(--radius-xl);padding:var(--sp-10);max-width:520px;width:100%;box-shadow:0 40px 100px rgba(0,0,0,0.6)">
+    <button id="close-modal" style="position:absolute;top:var(--sp-5);right:var(--sp-5);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);font-size:1.2rem;cursor:pointer;">×</button>
+    <div style="text-align:center;margin-bottom:var(--sp-6)">
+      <div style="font-size:2.5rem;margin-bottom:var(--sp-3)">🚀</div>
+      <h2 style="color:var(--clr-white);font-size:var(--fs-2xl);margin-bottom:var(--sp-2)">Book Your Free Demo</h2>
+      <p style="color:rgba(255,255,255,0.55);font-size:var(--fs-sm)">See Xecurra in action with our trade specialist.</p>
+    </div>
+    <form data-form="demo" style="display:flex;flex-direction:column;gap:var(--sp-4)">
+      <div class="form-grid">
+        <div class="form-group"><label class="form-label form-label--light">Name</label><input class="form-control form-control--dark" type="text" placeholder="Your Name" required /></div>
+        <div class="form-group"><label class="form-label form-label--light">Company</label><input class="form-control form-control--dark" type="text" placeholder="Company Name" required /></div>
+      </div>
+      <div class="form-group"><label class="form-label form-label--light">Email</label><input class="form-control form-control--dark" type="email" placeholder="you@company.com" required /></div>
+      <div class="form-group"><label class="form-label form-label--light">Phone</label><input class="form-control form-control--dark" type="tel" placeholder="+91 98765 43210" required /></div>
+      <button type="submit" class="btn btn--accent btn--lg" style="width:100%">Request My Free Demo</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+/* ============================================================
+   XECURRA INFINITY LLP — DESIGN SYSTEM
+   main.css | Global Tokens, Reset, Typography, Utilities
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── Design Tokens ─────────────────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --clr-primary:        #003366;
+  --clr-primary-dark:   #001f40;
+  --clr-primary-light:  #0a4a8a;
+  --clr-accent:         #007B8A;
+  --clr-accent-light:   #00B4CC;
+  --clr-accent-pale:    #e0f7fa;
+
+  /* Neutral Palette */
+  --clr-white:          #ffffff;
+  --clr-off-white:      #F8FAFC;
+  --clr-surface:        #EFF4F9;
+  --clr-border:         #D1DDE8;
+  --clr-text:           #1A2340;
+  --clr-text-muted:     #4A5568;
+  --clr-text-light:     #718096;
+
+  /* Dark Mode Surfaces */
+  --clr-dark-bg:        #06101e;
+  --clr-dark-surface:   #0d1e35;
+  --clr-dark-card:      #112240;
+  --clr-dark-border:    #1e3a5f;
+
+  /* Status Colors */
+  --clr-success:        #10B981;
+  --clr-warning:        #F59E0B;
+  --clr-error:          #EF4444;
+
+  /* Gradients */
+  --grad-primary:       linear-gradient(135deg, #003366 0%, #007B8A 100%);
+  --grad-primary-r:     linear-gradient(135deg, #007B8A 0%, #003366 100%);
+  --grad-hero:          linear-gradient(135deg, #06101e 0%, #0a1f3d 50%, #0d2a4a 100%);
+  --grad-accent:        linear-gradient(135deg, #007B8A 0%, #00B4CC 100%);
+  --grad-glass:         linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
+
+  /* Typography */
+  --ff-heading:         'Poppins', sans-serif;
+  --ff-body:            'DM Sans', sans-serif;
+
+  --fs-xs:   0.75rem;   /* 12px */
+  --fs-sm:   0.875rem;  /* 14px */
+  --fs-base: 1rem;      /* 16px */
+  --fs-md:   1.125rem;  /* 18px */
+  --fs-lg:   1.25rem;   /* 20px */
+  --fs-xl:   1.5rem;    /* 24px */
+  --fs-2xl:  1.875rem;  /* 30px */
+  --fs-3xl:  2.25rem;   /* 36px */
+  --fs-4xl:  3rem;      /* 48px */
+  --fs-5xl:  3.75rem;   /* 60px */
+  --fs-6xl:  4.5rem;    /* 72px */
+
+  --fw-normal:  400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-xbold:   800;
+  --fw-black:   900;
+
+  --lh-tight:   1.15;
+  --lh-snug:    1.35;
+  --lh-base:    1.6;
+  --lh-relaxed: 1.75;
+
+  /* Spacing */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* Layout */
+  --container-xl: 1280px;
+  --container-lg: 1024px;
+  --container-md: 768px;
+  --nav-height:   76px;
+
+  /* Borders & Radius */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:   0 4px 16px rgba(0,51,102,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-lg:   0 10px 40px rgba(0,51,102,0.18), 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-xl:   0 20px 60px rgba(0,51,102,0.22), 0 8px 24px rgba(0,0,0,0.1);
+  --shadow-glow: 0 0 40px rgba(0,180,204,0.3);
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);
+  --dur-fast:    150ms;
+  --dur-base:    250ms;
+  --dur-slow:    400ms;
+  --dur-xslow:   600ms;
+
+  /* Z-indexes */
+  --z-base:    1;
+  --z-above:   10;
+  --z-nav:     100;
+  --z-modal:   200;
+  --z-toast:   300;
+}
+
+/* ── CSS Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-base);
+  color: var(--clr-text);
+  background-color: var(--clr-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--clr-text);
+}
+
+h1 { font-size: clamp(var(--fs-3xl), 5vw, var(--fs-5xl)); }
+h2 { font-size: clamp(var(--fs-2xl), 3.5vw, var(--fs-4xl)); }
+h3 { font-size: clamp(var(--fs-xl),  2.5vw, var(--fs-2xl)); }
+h4 { font-size: clamp(var(--fs-lg),  2vw,   var(--fs-xl)); }
+h5 { font-size: var(--fs-lg); }
+h6 { font-size: var(--fs-base); }
+
+p {
+  line-height: var(--lh-relaxed);
+  color: var(--clr-text-muted);
+}
+
+/* ── Layout Utilities ──────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
+.container--md {
+  max-width: var(--container-lg);
+}
+
+.section {
+  padding-block: var(--sp-20);
+}
+
+.section--lg {
+  padding-block: var(--sp-32);
+}
+
+.section--sm {
+  padding-block: var(--sp-12);
+}
+
+/* ── Flex/Grid Helpers ─────────────────────────────────────── */
+.flex        { display: flex; }
+.flex-center  { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col     { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.gap-2  { gap: var(--sp-2); }
+.gap-4  { gap: var(--sp-4); }
+.gap-6  { gap: var(--sp-6); }
+.gap-8  { gap: var(--sp-8); }
+.gap-12 { gap: var(--sp-12); }
+
+.grid { display: grid; }
+
+/* ── Text Utilities ────────────────────────────────────────── */
+.text-center  { text-align: center; }
+.text-primary { color: var(--clr-primary); }
+.text-accent  { color: var(--clr-accent); }
+.text-white   { color: var(--clr-white); }
+.text-muted   { color: var(--clr-text-muted); }
+.text-light   { color: var(--clr-text-light); }
+
+.font-heading { font-family: var(--ff-heading); }
+.font-bold    { font-weight: var(--fw-bold); }
+.font-semi    { font-weight: var(--fw-semi); }
+
+/* ── Section Header ────────────────────────────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  background: var(--clr-accent-pale);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--sp-4);
+}
+
+.section-label--dark {
+  background: rgba(0, 180, 204, 0.15);
+  color: var(--clr-accent-light);
+}
+
+.section-header {
+  margin-bottom: var(--sp-12);
+}
+
+.section-header .section-label {
+  margin-bottom: var(--sp-3);
+}
+
+.section-header h2 {
+  margin-bottom: var(--sp-4);
+}
+
+.section-header p {
+  font-size: var(--fs-md);
+  max-width: 640px;
+}
+
+.section-header.text-center p {
+  margin-inline: auto;
+}
+
+/* ── Gradient Text ─────────────────────────────────────────── */
+.gradient-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text--accent {
+  background: var(--grad-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glassmorphism ─────────────────────────────────────────── */
+.glass {
+  background: var(--grad-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass--dark {
+  background: rgba(13, 34, 64, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 123, 138, 0.3);
+}
+
+/* ── Dot Grid Background ───────────────────────────────────── */
+.bg-dots {
+  background-image: radial-gradient(circle, rgba(0,51,102,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-dots--light {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Divider ───────────────────────────────────────────────── */
+.divider {
+  width: 60px;
+  height: 4px;
+  background: var(--grad-accent);
+  border-radius: var(--radius-full);
+  margin: var(--sp-4) 0;
+}
+
+.divider--center { margin-inline: auto; }
+
+/* ── Tag / Badge ───────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  font-family: var(--ff-heading);
+  letter-spacing: 0.04em;
+}
+
+.badge--primary {
+  background: rgba(0,51,102,0.1);
+  color: var(--clr-primary);
+}
+
+.badge--accent {
+  background: rgba(0,123,138,0.12);
+  color: var(--clr-accent);
+}
+
+.badge--success {
+  background: rgba(16,185,129,0.1);
+  color: var(--clr-success);
+}
+
+/* ── Scroll Reveal (AOS fallback) ──────────────────────────── */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(30px);
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-30px);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(30px);
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.9);
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .container {
+    padding-inline: var(--sp-4);
+  }
+
+  .section {
+    padding-block: var(--sp-12);
+  }
+
+  .section--lg {
+    padding-block: var(--sp-20);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-inline: var(--sp-4);
+  }
+}

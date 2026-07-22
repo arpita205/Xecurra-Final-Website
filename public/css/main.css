@@ -122,6 +122,45 @@
   --z-toast:   300;
 }
 
+/* ── Light Mode Overrides ──────────────────────────────────── */
+body.light-mode {
+  --clr-primary:        #0077B6;
+  --clr-primary-dark:   #005f8f;
+  --clr-primary-light:  #0096d6;
+  --clr-accent:         #0097a7;
+  --clr-accent-light:   #00acc1;
+
+  --clr-white:          #f8f9fa;
+  --clr-off-white:      #f0f2f5;
+  --clr-surface:        #e9ecef;
+  --clr-border:         #ced4da;
+  --clr-text:           #1a1a2e;
+  --clr-text-muted:     #495057;
+  --clr-text-light:     #6c757d;
+
+  --clr-dark-bg:        #f8f9fa;
+  --clr-dark-surface:   #e9ecef;
+  --clr-dark-card:      #ffffff;
+  --clr-dark-border:    #dee2e6;
+
+  --clr-success:        #28a745;
+  --clr-warning:        #ffc107;
+  --clr-error:          #dc3545;
+
+  --grad-hero:          linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  --grad-glass:         linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-lg:   0 10px 40px rgba(0,0,0,0.1), 0 4px 16px rgba(0,0,0,0.05);
+  --shadow-xl:   0 20px 60px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.06);
+  --shadow-glow: 0 0 40px rgba(0,151,167,0.2);
+
+  --grad-primary:       linear-gradient(135deg, #0077B6 0%, #0097a7 100%);
+  --grad-primary-r:     linear-gradient(135deg, #0097a7 0%, #0077B6 100%);
+  --grad-accent:        linear-gradient(135deg, #0097a7 0%, #00acc1 100%);
+}
+
 /* ── CSS Reset ─────────────────────────────────────────────── */
 *,
 *::before,

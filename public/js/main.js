@@ -333,4 +333,26 @@
     }, { passive: true });
   }
 
+  /* ── Theme Toggle ──────────────────────────────────────── */
+  const THEME_KEY = 'xecurra-theme';
+  const html = document.documentElement;
+  const body = document.body;
+
+  // Apply saved theme on load
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme === 'light') {
+    body.classList.add('light-mode');
+  } else if (savedTheme === 'dark') {
+    body.classList.remove('light-mode');
+  }
+
+  // Bind toggle buttons
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      const isLight = body.classList.contains('light-mode');
+      localStorage.setItem(THEME_KEY, isLight ? 'light' : 'dark');
+    });
+  });
+
 })();

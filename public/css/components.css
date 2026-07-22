@@ -160,6 +160,12 @@
   flex-shrink: 0;
 }
 
+.navbar__logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .navbar__logo-mark {
   width: 40px;
   height: 40px;
@@ -1620,5 +1626,355 @@ textarea.form-control {
   .whatsapp-float__btn {
     width: 52px;
     height: 52px;
+  }
+}
+
+/* ── Top Utility Bar ──────────────────────────────────────── */
+.top-bar {
+  background: rgba(6,16,30,0.95);
+  border-bottom: 1px solid rgba(0,123,138,0.15);
+  padding: var(--sp-2) 0;
+  font-size: var(--fs-xs);
+  position: relative;
+  z-index: calc(var(--z-sticky) + 1);
+}
+
+.top-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
+.top-bar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
+.top-bar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color var(--dur-base);
+}
+
+.top-bar__item:hover {
+  color: var(--clr-accent-light);
+}
+
+.top-bar__item svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.top-bar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.top-bar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+  transition: color var(--dur-base);
+}
+
+.top-bar__link:hover {
+  color: var(--clr-accent-light);
+}
+
+.top-bar__link svg {
+  width: 14px;
+  height: 14px;
+}
+
+.top-bar__cta {
+  background: var(--grad-accent);
+  color: var(--clr-white);
+  padding: var(--sp-1) var(--sp-4);
+  border-radius: var(--radius-sm);
+  font-weight: var(--fw-semi);
+  text-decoration: none;
+  transition: all var(--dur-base);
+}
+
+.top-bar__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,123,138,0.4);
+}
+
+/* ── Nav CTA Buttons ──────────────────────────────────────── */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.btn--nav-quote {
+  background: transparent;
+  color: var(--clr-accent-light);
+  border: 1px solid var(--clr-accent-light);
+  padding: var(--sp-2) var(--sp-5);
+  font-size: var(--fs-sm);
+}
+
+.btn--nav-quote:hover {
+  background: rgba(0,180,204,0.12);
+}
+
+.btn--nav-track {
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: var(--sp-2) var(--sp-5);
+  font-size: var(--fs-sm);
+}
+
+.btn--nav-track:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--clr-white);
+}
+
+/* ── Hero Quote Form ──────────────────────────────────────── */
+.hero-quote-form {
+  background: rgba(17,34,64,0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,123,138,0.3);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  margin-top: var(--sp-8);
+}
+
+.hero-quote-form__title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semi);
+  color: var(--clr-white);
+  margin-bottom: var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.hero-quote-form__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-3);
+}
+
+.hero-quote-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.hero-quote-form__field label {
+  font-size: var(--fs-xs);
+  color: rgba(255,255,255,0.5);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-quote-form__field input,
+.hero-quote-form__field select {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3) var(--sp-3);
+  color: var(--clr-white);
+  font-family: var(--ff-body);
+  font-size: var(--fs-sm);
+  transition: border-color var(--dur-base);
+}
+
+.hero-quote-form__field input::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.hero-quote-form__field input:focus,
+.hero-quote-form__field select:focus {
+  outline: none;
+  border-color: var(--clr-accent-light);
+}
+
+.hero-quote-form__field select option {
+  background: var(--clr-dark-card);
+  color: var(--clr-white);
+}
+
+.hero-quote-form__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.hero-quote-form__actions .btn {
+  flex: 1;
+}
+
+/* ── FAQ Section ──────────────────────────────────────────── */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+}
+
+.faq-item {
+  background: var(--clr-dark-card);
+  border: 1px solid var(--clr-dark-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--dur-base);
+}
+
+.faq-item:hover {
+  border-color: rgba(0,123,138,0.4);
+}
+
+.faq-item__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-5) var(--sp-6);
+  cursor: pointer;
+  font-family: var(--ff-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--clr-white);
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.faq-item__q svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform var(--dur-base);
+  color: var(--clr-accent-light);
+}
+
+.faq-item.open .faq-item__q svg {
+  transform: rotate(180deg);
+}
+
+.faq-item__a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--dur-base) var(--ease-smooth);
+}
+
+.faq-item.open .faq-item__a {
+  max-height: 300px;
+}
+
+.faq-item__a-inner {
+  padding: 0 var(--sp-6) var(--sp-5);
+  color: rgba(255,255,255,0.6);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Certification Cards ──────────────────────────────────── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+.cert-card-enhanced {
+  background: var(--clr-dark-card);
+  border: 1px solid var(--clr-dark-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  text-align: center;
+  transition: all var(--dur-base);
+}
+
+.cert-card-enhanced:hover {
+  border-color: rgba(0,123,138,0.4);
+  transform: translateY(-2px);
+}
+
+.cert-card-enhanced__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--sp-4);
+  border-radius: var(--radius-md);
+  background: rgba(0,123,138,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.cert-card-enhanced__name {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--clr-white);
+  margin-bottom: var(--sp-1);
+}
+
+.cert-card-enhanced__desc {
+  font-size: var(--fs-xs);
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── Responsive: Top Bar ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .top-bar__left {
+    gap: var(--sp-3);
+  }
+
+  .top-bar__right .top-bar__link span {
+    display: none;
+  }
+
+  .hero-quote-form__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .top-bar {
+    display: none;
+  }
+
+  .hero-quote-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-quote-form__actions {
+    flex-direction: column;
+  }
+
+  .hero-quote-form__actions .btn {
+    width: 100%;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
   }
 }

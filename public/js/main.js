@@ -43,13 +43,17 @@
     });
   }
 
-  /* ── Mobile Sub-Menu Toggles ───────────────────────────── */
+  /* ── Mobile Sub-Menu Toggles (with Back Button) ──────── */
   document.querySelectorAll('.mobile-nav-item > a[data-has-sub]').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const item = link.closest('.mobile-nav-item');
       const sub = item.querySelector('.mobile-sub');
       if (sub) {
+        // Close all other open subs
+        document.querySelectorAll('.mobile-sub.open').forEach(openSub => {
+          if (openSub !== sub) openSub.classList.remove('open');
+        });
         sub.classList.toggle('open');
         const arrow = link.querySelector('.m-arrow');
         if (arrow) arrow.style.transform = sub.classList.contains('open') ? 'rotate(180deg)' : '';
@@ -156,10 +160,23 @@
     trigger.addEventListener('click', () => {
       const item = trigger.closest('.accordion-item');
       const isOpen = item.classList.contains('open');
-      // Close all in same group
       const group = item.closest('[data-accordion]');
       if (group) {
         group.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+      }
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* ── FAQ Toggle ─────────────────────────────────────────── */
+  document.querySelectorAll('.faq-item__q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close siblings
+      const grid = item.closest('.faq-grid');
+      if (grid) {
+        grid.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       }
       if (!isOpen) item.classList.add('open');
     });

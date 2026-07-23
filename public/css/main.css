@@ -89,6 +89,7 @@
   --container-xl: 1280px;
   --container-lg: 1024px;
   --container-md: 768px;
+  --topbar-height: 36px;
   --nav-height:   76px;
 
   /* Borders & Radius */
@@ -186,6 +187,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: calc(var(--topbar-height) + var(--nav-height));
 }
 
 img, video, svg {
@@ -436,7 +438,12 @@ p {
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 768px) {
   :root {
+    --topbar-height: 0px;
     --nav-height: 64px;
+  }
+
+  body {
+    padding-top: var(--nav-height);
   }
 
   .container {

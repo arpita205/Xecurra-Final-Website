@@ -119,7 +119,7 @@
 /* ── Navigation ────────────────────────────────────────────── */
 .navbar {
   position: fixed;
-  top: 0;
+  top: var(--topbar-height);
   left: 0;
   right: 0;
   z-index: var(--z-nav);
@@ -316,8 +316,13 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 0.9rem;
   transition: background var(--dur-base);
+}
+
+.nav-dropdown a .dd-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--clr-accent-light);
 }
 
 .nav-dropdown a:hover .dd-icon {
@@ -364,7 +369,7 @@
 .mobile-nav {
   display: none;
   position: fixed;
-  top: var(--nav-height);
+  top: calc(var(--topbar-height) + var(--nav-height));
   left: 0;
   right: 0;
   bottom: 0;
@@ -1196,9 +1201,8 @@ textarea.form-control {
   line-height: var(--lh-relaxed);
 }
 
-.footer__contact-item span:first-child {
+.footer__contact-item > *:first-child {
   color: var(--clr-accent);
-  font-size: 0.9rem;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -1307,7 +1311,7 @@ textarea.form-control {
 /* ── Page Hero (Subpages) ──────────────────────────────────── */
 .page-hero {
   background: var(--grad-hero);
-  padding-top: calc(var(--nav-height) + var(--sp-16));
+  padding-top: var(--sp-16);
   padding-bottom: var(--sp-20);
   position: relative;
   overflow: hidden;
@@ -1635,8 +1639,12 @@ textarea.form-control {
   border-bottom: 1px solid rgba(0,123,138,0.15);
   padding: var(--sp-2) 0;
   font-size: var(--fs-xs);
-  position: relative;
-  z-index: calc(var(--z-sticky) + 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topbar-height);
+  z-index: calc(var(--z-nav) + 2);
 }
 
 .top-bar__inner {
@@ -1962,6 +1970,10 @@ textarea.form-control {
     display: none;
   }
 
+  body {
+    padding-top: var(--nav-height);
+  }
+
   .hero-quote-form__grid {
     grid-template-columns: 1fr;
   }
@@ -2026,6 +2038,26 @@ body.light-mode .theme-toggle .icon-moon {
 }
 
 /* Light mode body adjustments */
+body.light-mode .top-bar {
+  background: rgba(248, 249, 250, 0.95);
+  border-bottom: 1px solid rgba(0,151,167,0.15);
+}
+
+body.light-mode .top-bar__item,
+body.light-mode .top-bar__link {
+  color: rgba(26,26,46,0.6);
+}
+
+body.light-mode .top-bar__item:hover,
+body.light-mode .top-bar__link:hover {
+  color: var(--clr-accent);
+}
+
+body.light-mode .top-bar__item svg,
+body.light-mode .top-bar__link svg {
+  stroke: rgba(26,26,46,0.6);
+}
+
 body.light-mode .navbar--scrolled {
   background: rgba(248, 249, 250, 0.95);
   border-bottom: 1px solid rgba(0,151,167,0.2);
@@ -2055,6 +2087,14 @@ body.light-mode .nav-dropdown::before {
 
 body.light-mode .nav-dropdown a {
   color: rgba(26,26,46,0.8);
+}
+
+body.light-mode .nav-dropdown a .dd-icon {
+  background: rgba(0,151,167,0.1);
+}
+
+body.light-mode .nav-dropdown a .dd-icon svg {
+  stroke: var(--clr-accent);
 }
 
 body.light-mode .nav-dropdown a:hover {

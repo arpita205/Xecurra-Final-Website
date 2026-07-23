@@ -6,12 +6,13 @@
 /* ── Hero Section ──────────────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--topbar-height));
+  margin-top: calc(-1 * (var(--topbar-height) + var(--nav-height)));
+  padding-top: calc(var(--topbar-height) + var(--nav-height));
   display: flex;
   align-items: center;
   background: var(--grad-hero);
   overflow: hidden;
-  padding-top: var(--nav-height);
 }
 
 /* Animated trade-route / world map SVG background */
